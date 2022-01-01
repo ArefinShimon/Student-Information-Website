@@ -1,0 +1,27 @@
+<?php
+
+
+$result = array();
+if(isset($_REQUEST['submit'])){
+    $userName = $_REQUEST['username'];
+    $password = $_REQUEST['password'];
+
+    if(strlen($userName) > 5 && strlen($password) > 3){
+        if($userName == "arefin" && $password == "12345"){
+            $result = array("status" => "true", "msg" => "successfull");
+            header('Location: ../home.html');
+        }
+        
+    }else{
+        $result = array("status" => "false", "msg" => "Please insert the right information");
+    }    
+    
+}else{
+    $result = array("status" => "false", "msg" => "Invalid Request");
+}
+
+
+echo json_encode($result, JSON_UNESCAPED_UNICODE);
+
+?>
+
