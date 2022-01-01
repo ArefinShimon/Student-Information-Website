@@ -1,1 +1,1 @@
-# Student-Information-Website
+# student-information-website
